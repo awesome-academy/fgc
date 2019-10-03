@@ -1,4 +1,27 @@
 vi:
   layouts:
+    header:
+      home: "Trang chủ"
+      games: "Games"
+      reviews: "Đánh giá"
+      news: "Tin tức"
+      contact: "Liên lạc"
+      login: "Đăng nhập"
+      register: "Đăng kí"
+    footer:
+      home: "Trang chủ"
     application:
       title: "Diễn đàn cộng đồng game"
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text
+        ever since the 1500s."
+  static_pages:
+    index:
+      title: "A random post"
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text
+        ever since the 1500s."
+      lastest_news: "Tin mới nhất"
+      online: "Trực tuyến"
+      categories: "Danh mục"
+      games: "Trò chơi"

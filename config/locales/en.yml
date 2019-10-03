@@ -1,5 +1,27 @@
 en:
   layouts:
+    header:
+      home: "Home"
+      games: "Games"
+      reviews: "Reviews"
+      news: "News"
+      contact: "Contact"
+      login: "Login"
+      register: "Register"
+    footer:
+      home: "Home"
     application:
       title: "Forum for gamer community"
-
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text
+        ever since the 1500s."
+  static_pages:
+    index:
+      title: "A random post"
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text
+        ever since the 1500s."
+      lastest_news: "Lastest news"
+      online: "Online"
+      categories: "Categories"
+      games: "Games"
