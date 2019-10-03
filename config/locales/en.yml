@@ -8,6 +8,8 @@ en:
       contact: "Contact"
       login: "Login"
       register: "Register"
+      english: "Eng"
+      vietnamese: "Vie"
     footer:
       home: "Home"
     application:
@@ -25,3 +27,13 @@ en:
       online: "Online"
       categories: "Categories"
       games: "Games"
+  sessions:
+    new:
+      email: "Email"
+      password: "Password"
+      login: "Login"
+      register: "Or create a new one..."
+      remember_me: "Remember me"
+      email_wrong: "Email not match any account"
+      password_wrong: "Password was not match"
+      success: "Login success"
