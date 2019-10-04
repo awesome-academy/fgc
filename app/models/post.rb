@@ -4,5 +4,5 @@ class Post < ApplicationRecord
 
   has_many :activities
 
-  enum status: {approve: 1, reject: 0}
+  enum status: {approved: 1, rejected: 0}
 end

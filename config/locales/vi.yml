@@ -37,3 +37,12 @@ vi:
       email_wrong: "Không tìm thấy email"
       password_wrong: "Mật khẩu không đúng"
       success: "Đăng nhập thành công"
+  users:
+    new:
+      regis_success: "Đăng kí thành công"
+      regis_fail: "Đăng kí thất bại"
+      register: "Đăng kí"
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirm: "Nhập lại mật khẩu"

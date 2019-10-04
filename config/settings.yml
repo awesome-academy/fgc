@@ -1,2 +1,6 @@
 user_password:
   maximum: 255
+user_name:
+  maximum: 70
+  minimum: 3
+

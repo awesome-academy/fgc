@@ -37,3 +37,15 @@ en:
       email_wrong: "Email not match any account"
       password_wrong: "Password was not match"
       success: "Login success"
+  users:
+    new:
+      regis_success: "Register success"
+      regis_fail: "Register failed"
+      register: "Register"
+      regis_success: "Register success"
+      regis_fail: "Register failed"
+      register: "Register"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password confirmation"
