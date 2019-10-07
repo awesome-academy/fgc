@@ -11,8 +11,12 @@
       <% end %>
       <nav class="top-nav-area w-100">
         <div class="user-panel">
-          <%= link_to t(".login"), "#" %>
-          / <%= link_to t(".register"), "#" %>
+          <% if log_in? %>
+
+          <% else %>
+            <%= link_to t(".login"), login_path %>
+            / <%= link_to t(".register"), "#" %>
+          <% end %>
         </div>
         <ul class="main-menu primary-menu">
           <li><%= link_to t(".home"), "#" %></li>
@@ -29,3 +33,4 @@
     </div>
   </div>
 </header>
+

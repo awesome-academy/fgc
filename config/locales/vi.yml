@@ -8,6 +8,8 @@ vi:
       contact: "Liên lạc"
       login: "Đăng nhập"
       register: "Đăng kí"
+      english: "Eng"
+      vietnamese: "Vie"
     footer:
       home: "Trang chủ"
     application:
@@ -25,3 +27,13 @@ vi:
       online: "Trực tuyến"
       categories: "Danh mục"
       games: "Trò chơi"
+  sessions:
+    new:
+      email: "Email"
+      password: "Mật khẩu"
+      login: "Đăng nhập"
+      register: "Hoặc tạo một tài khoản mới..."
+      remember_me: "Tự động đăng nhập"
+      email_wrong: "Không tìm thấy email"
+      password_wrong: "Mật khẩu không đúng"
+      success: "Đăng nhập thành công"
