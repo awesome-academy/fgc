@@ -5,6 +5,6 @@ class Comment < ApplicationRecord
                             optional: true
 
   has_many :sub_comments, class_name: Comment.name,
-                        foreign_key: :parent_id
+                        foreign_key: :comment_id
   has_many :activities
 end

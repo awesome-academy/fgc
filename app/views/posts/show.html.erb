@@ -1,0 +1,56 @@
+<!-- Games section -->
+<section class="games-single-page">
+  <div class="container">
+    <div class="game-single-preview">
+      <img src="img/games/big.jpg" alt="">
+    </div>
+    <div class="row">
+      <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
+
+        <h2 class="gs-title"><%= @post.subject %></h2>
+        <div class="gs-meta">
+          <%= t "posts.show.time", name: time_ago_in_words(@post.created_at) %>
+          <%= t ".in" %> <%= link_to @post.topic.content, "#" %>
+        </div>
+        <p class="text-white"><%= @post.content %></p>
+        <div class="geme-social-share pt-5 d-flex">
+          <p><%= t ".share" %></p>
+          <%= link_to "#" do %>
+            <i class="fa fa-pinterest"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fa fa-facebook"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fa fa-dribbble"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fa fa-twitter"></i>
+          <% end %>
+          <%= link_to "#" do %>
+            <i class="fa fa-behance"></i>
+          <% end %>
+        </div>
+        <section class="game-author-section">
+          <div class="container">
+            <div class="game-author-pic set-bg" data-setbg="assets/img/author.jpg"></div>
+            <div class="game-author-info">
+              <h4><%= t ".write_by" %> <%= @post.user_name %></h4>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
+        <div id="stickySidebar">
+          <div class="widget-item">
+            <div class="rating-widget">
+              <h4 class="widget-title"><%= t ".suggest" %></h4>
+              <!-- This area for suggest item -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Games end-->
