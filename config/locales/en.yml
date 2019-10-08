@@ -57,3 +57,10 @@ en:
       suggest: "Suggest post"
       time: "%{name} ago"
       post_not_found: "Post not found"
+    new:
+      create_sucess: "Create post success"
+      create_fail: "Create post failed"
+      title: "Title"
+      root_topic: "Root topic"
+      sub_topic: "Topic"
+      create: "Create Post"

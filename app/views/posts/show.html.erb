@@ -12,7 +12,7 @@
           <%= t "posts.show.time", name: time_ago_in_words(@post.created_at) %>
           <%= t ".in" %> <%= link_to @post.topic.content, "#" %>
         </div>
-        <p class="text-white"><%= @post.content %></p>
+        <p class="text-white"><%= @post.content.html_safe %></p>
         <div class="geme-social-share pt-5 d-flex">
           <p><%= t ".share" %></p>
           <%= link_to "#" do %>

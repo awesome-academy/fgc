@@ -3,4 +3,7 @@ user_password:
 user_name:
   maximum: 70
   minimum: 3
+post:
+  content:
+    minimum: 50
 

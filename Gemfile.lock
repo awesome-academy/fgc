@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: bfe47345606e5dc977f8928d9d9db207232671d6
+  specs:
+    ckeditor (5.0.0)
+      orm_adapter (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,6 +65,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    bootstrap_form (4.3.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -161,6 +171,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    orm_adapter (0.5.0)
     parallel (1.17.0)
     parser (2.6.4.1)
       ast (~> 2.4.0)
@@ -276,9 +287,11 @@ DEPENDENCIES
   bcrypt (= 3.1.12)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
+  bootstrap_form (~> 4.0)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
+  ckeditor!
   coffee-rails (~> 4.2)
   config
   faker

@@ -5,6 +5,32 @@ $(window).on('load', function() {
   $("#preloder").delay(400).fadeOut("slow");
 });
 
+$(document).ready(function(){
+  $('#root_topic').change(function() {
+    var id = $(this).val();
+    $.ajax({
+      url: '/posts/sub_topics',
+      type: 'GET',
+      data: {
+        id: id,
+      },
+      dataType: 'json',
+      success: function(data){
+        $('#subtopics').html(each_subtopic(data));
+      },
+    });
+  });
+});
+
+function each_subtopic(data){
+  var html = '<select class="form-control" name="post[topic_id]">';
+  $.each(data.sub_topics, function (key, value) {
+    html += '<option value="'+ value[1] +'">'+value[0]+'</option>'
+  });
+  html += '</select>';
+  return html;
+};
+
 $(document).on("turbolinks:load", function() {
   $('.hero-slider').owlCarousel({
     loop: true,
@@ -22,6 +48,7 @@ $(document).on("turbolinks:load", function() {
 $(document).on("turbolinks:before-cache", function() {
   $('.hero-slider').owlCarousel('destroy');
 });
+
 
 $(function() {
   $('.primary-menu').slicknav({
