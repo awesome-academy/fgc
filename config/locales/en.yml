@@ -49,3 +49,11 @@ en:
       email: "Email"
       password: "Password"
       password_confirm: "Password confirmation"
+  posts:
+    show:
+      in: "in"
+      share: "Share:"
+      write_by: "Written by:"
+      suggest: "Suggest post"
+      time: "%{name} ago"
+      post_not_found: "Post not found"

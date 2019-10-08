@@ -2,9 +2,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
   def change
     create_table :posts do |t|
       t.string :subject
-      t.references :topics, foreign_key: true
+      t.references :topic, foreign_key: true
       t.text :content
-      t.references :users, foreign_key: true
+      t.references :user, foreign_key: true
       t.integer :view_count
       t.integer :status, default: 0
 
