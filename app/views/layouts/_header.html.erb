@@ -12,7 +12,7 @@
       <nav class="top-nav-area w-100">
         <div class="user-panel">
           <% if log_in? %>
-
+            <%= t(".hello")%> <%= current_user.name %>
           <% else %>
             <%= link_to t(".login"), login_path %>
             / <%= link_to t(".register"), new_user_path %>

@@ -6,4 +6,8 @@ class Post < ApplicationRecord
   delegate :name, to: :user, prefix: :user
 
   enum status: {approved: 1, rejected: 0}
+  validates :subject, presence: true
+  validates :topic_id, presence: true
+  validates :content, presence: true,
+                      length: {maximum: Settings.post.content.minimum}
 end

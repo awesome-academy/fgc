@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :load_topic
 
+  include SessionsHelper
   private
 
   def set_locale
