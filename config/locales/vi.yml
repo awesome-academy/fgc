@@ -1,5 +1,8 @@
 vi:
   layouts:
+    pagetop:
+      home: "Trang chủ"
+      create_post: "Tạo bài đăng mới"
     header:
       home: "Trang chủ"
       games: "Games"
@@ -54,7 +57,7 @@ vi:
       suggest: "Bài đăng gợi ý"
       time: "%{name} trước"
       post_not_found: "Không tìm thấy bài đăng"
-      comments: "Bình luận"
+      comment: "Bình luận"
       reply: "Trả lời"
     new:
       create_sucess: "Tạo bài đăng thành công"
@@ -63,4 +66,10 @@ vi:
       root_topic: "Chủ đề gốc"
       sub_topic: "Chủ đề"
       create: "Tạo bài đăng"
-      require_login: "Vui lòng đăng nhập trước khi tạo bài đăng"
+      require_login: "Vui lòng đăng nhập để tạo bài đăng"
+      comment: "Bình luận"
+      write_a_comments: "Viết một bình luận mới"
+  comment:
+    create:
+      comment_error: "Có lỗi xảy ra, vui lòng thử lại"
+      comment_sucess: "Đã bình luận"

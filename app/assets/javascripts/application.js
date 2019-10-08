@@ -1,11 +1,10 @@
-//= require rails-ujs
-//= require turbolinks
-//= require activestorage
-//= require jquery-3.2.1.min
+//= require jquery
 //= require jquery.turbolinks
+//= require rails-ujs
+//= require activestorage
 //= require popper
 //= require bootstrap-sprockets
-//= require bootstrap.min
+//= require bootstrap
 //= require main
 //= require jquery.magnific-popup.min
 //= require jquery.slicknav.min

@@ -20,6 +20,7 @@ $(document).ready(function(){
       },
     });
   });
+
 });
 
 function each_subtopic(data){
@@ -31,7 +32,7 @@ function each_subtopic(data){
   return html;
 };
 
-$(document).on("turbolinks:load", function() {
+$(document).ready(function () {
   $('.hero-slider').owlCarousel({
     loop: true,
     nav: true,

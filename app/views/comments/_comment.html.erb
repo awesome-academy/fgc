@@ -1,0 +1,32 @@
+<div class="d-flex flex-row-reverse w-100">
+  <div class="col-md-10 col-sm-10">
+    <article class="row one-comment">
+      <div class="col-md-2 col-sm-2 hidden-xs">
+        <figure class="thumbnail">
+          <%= image_tag "review/user-avatar-placeholder.png", class: "img-responsive" %>
+        </figure>
+      </div>
+      <div class="col-md-10 col-sm-10">
+        <div class="panel panel-default arrow left">
+          <div class="panel-body">
+            <header class="text-left">
+              <div class="comment-user text-white">
+                <i class="fa fa-user text-white"></i>
+                <%= comment.user_name %>
+              </div>
+              <time class="comment-date text-white">
+                <i class="fa fa-clock-o text-white"></i>
+                <%= t "posts.show.time", name: time_ago_in_words(comment.created_at) %>
+              </time>
+            </header>
+            <div class="comment-post">
+              <p class="text-white">
+                <%= comment.content %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>

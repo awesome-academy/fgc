@@ -7,4 +7,9 @@ class Comment < ApplicationRecord
   has_many :sub_comments, class_name: Comment.name,
                         foreign_key: :comment_id
   has_many :activities
+
+  validates :content, presence: true
+  scope :root_comments, ->{where comment_id: nil}
+  scope :date_descending, ->{order created_at: :desc}
+  delegate :name, to: :user, prefix: :user
 end
