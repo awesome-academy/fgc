@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :activities
   has_many :posts
+  has_many :comments
   has_many :owner, class_name: Activity.name,
                     foreign_key: :onwer_id,
                     dependent: :destroy

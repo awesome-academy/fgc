@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user.authenticate params[:session][:password]
       flash[:success] = t "sessions.new.success"
       log_in @user
-      redirect_to root_path
+      redirect_back_or @user
     else
       flash[:danger] = t "sessions.new.password_wrong"
       render :new
