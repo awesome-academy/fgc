@@ -57,6 +57,8 @@ en:
       suggest: "Suggest post"
       time: "%{name} ago"
       post_not_found: "Post not found"
+      comment: "Comments"
+      reply: "Reply"
     new:
       create_sucess: "Create post success"
       create_fail: "Create post failed"
@@ -64,3 +66,4 @@ en:
       root_topic: "Root topic"
       sub_topic: "Topic"
       create: "Create Post"
+      require_login: "Please login before create post"

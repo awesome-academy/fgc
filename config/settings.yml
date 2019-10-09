@@ -6,4 +6,6 @@ user_name:
 post:
   content:
     minimum: 50
+comment:
+  paginate: 10
 

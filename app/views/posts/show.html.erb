@@ -1,12 +1,10 @@
-<!-- Games section -->
+<% provide(:parent, @post.topic.content ) %>
+<% provide(:title, @post.subject ) %>
 <section class="games-single-page">
   <div class="container">
-    <div class="game-single-preview">
-      <img src="img/games/big.jpg" alt="">
-    </div>
+    <%= render "layouts/pagetop" %>
     <div class="row">
       <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
-
         <h2 class="gs-title"><%= @post.subject %></h2>
         <div class="gs-meta">
           <%= t "posts.show.time", name: time_ago_in_words(@post.created_at) %>
@@ -24,8 +22,8 @@
           <%= link_to "#" do %>
             <i class="fa fa-dribbble"></i>
           <% end %>
-          <%= link_to "#" do %>
-            <i class="fa fa-twitter"></i>
+            <%= link_to "#" do %>
+          <i class="fa fa-twitter"></i>
           <% end %>
           <%= link_to "#" do %>
             <i class="fa fa-behance"></i>
@@ -33,12 +31,58 @@
         </div>
         <section class="game-author-section">
           <div class="container">
-            <div class="game-author-pic set-bg" data-setbg="assets/img/author.jpg"></div>
+            <div class="game-author-pic set-bg" data-setbg="/assets/author.jpg"></div>
             <div class="game-author-info">
               <h4><%= t ".write_by" %> <%= @post.user_name %></h4>
             </div>
           </div>
         </section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              <h2 class="page-header text-white"><%= t ".comments" %></h2>
+              <section class="comment-list">
+                <% @comments.each do |comment| %>
+                  <article class="row">
+                    <div class="col-md-2 col-sm-2 hidden-xs">
+                      <figure class="thumbnail">
+                        <%= image_tag "review/user-avatar-placeholder.png", class: "img-responsive" %>
+                      </figure>
+                    </div>
+                    <div class="col-md-10 col-sm-10">
+                      <div class="panel panel-default arrow left">
+                        <div class="panel-body">
+                          <header class="text-left">
+                            <div class="comment-user text-white">
+                              <i class="fa fa-user text-white"></i>
+                              <%= comment.user.name %>
+                            </div>
+                            <time class="comment-date text-white">
+                              <i class="fa fa-clock-o text-white"></i>
+                              <%= t "posts.show.time", name: time_ago_in_words(comment.created_at) %>
+                            </time>
+                          </header>
+                          <div class="comment-post">
+                            <p class="text-white">
+                              <%= comment.content %>
+                            </p>
+                          </div>
+                          <p class="text-right">
+                            <%= link_to "#", class: "btn btn-default btn-sm text-white" do %>
+                              <i class="fa fa-reply text-white"></i>
+                              <%= t ".reply" %>
+                            <% end %>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <%= will_paginate @comments, :page_links => false %>
+                  </article>
+                <% end %>
+              </section>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
         <div id="stickySidebar">
@@ -53,4 +97,3 @@
     </div>
   </div>
 </section>
-<!-- Games end-->

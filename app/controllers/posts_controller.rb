@@ -1,10 +1,18 @@
 class PostsController < ApplicationController
   before_action :load_post, only: :show
   before_action :load_root_topics, only: :new
+  before_action :check_login, only: [:new, :create]
 
   def index; end
 
-  def show; end
+  def show
+    @comments = @post
+                .comments
+                .eager_load(:sub_comments, :user)
+                .order(created_at: :desc)
+                .paginate page: params[:page],
+                          per_page: Settings.comment.paginate
+  end
 
   def new
     @post = current_user.posts.build

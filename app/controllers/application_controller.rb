@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
                           .alphabet_content
                           .eager_load(:sub_topics)
   end
+
+  def check_login
+    return if log_in?
+    store_location
+    flash[:danger] = t "posts.new.require_login"
+    redirect_to login_path
+  end
 end
