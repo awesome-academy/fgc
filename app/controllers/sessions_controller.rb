@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
   def load_user
     @user = User.find_by email: params[:session][:email]
     return if @user
-
     flash[:danger] = t "sessions.new.email_wrong"
     render :new
   end

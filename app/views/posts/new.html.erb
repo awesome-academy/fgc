@@ -1,9 +1,8 @@
 <%= javascript_include_tag Ckeditor.cdn_url %>
+<% provide(:subtitle_lv1, t("layouts.pagetop.create_post")) %>
 <section class="games-single-page">
   <div class="container">
-    <div class="game-single-preview">
-      <%= image_tag "games/big.jpg" %>
-    </div>
+    <%= render "layouts/pagetop" %>
     <div class="row">
       <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
         <%= bootstrap_form_for(@post) do |f| %>

@@ -1,5 +1,6 @@
-<% provide(:parent, @post.topic.content ) %>
-<% provide(:title, @post.subject ) %>
+<% provide(:subtitle_lv1, @post.topic.content) %>
+<% provide(:title, @post.subject) %>
+<% provide(:subtitle_lv2, @post.subject) %>
 <section class="games-single-page">
   <div class="container">
     <%= render "layouts/pagetop" %>
@@ -40,10 +41,18 @@
         <div class="container">
           <div class="row">
             <div class="col-md-10">
-              <h2 class="page-header text-white"><%= t ".comments" %></h2>
               <section class="comment-list">
+                <div class="reply-post w-100">
+                  <%= render "layouts/error" %>
+                  <h3 class="page-header text-white"><%= t ".write_a_comments" %></h3>
+                  <%= bootstrap_form_for [@post, @comment] do |f| %>
+                    <%= f.text_field :content, hide_label: true %>
+                    <%= f.submit t(".comment") %>
+                  <% end %>
+                </div>
+                <h2 class="page-header text-white"><%= t ".comment" %></h2>
                 <% @comments.each do |comment| %>
-                  <article class="row">
+                  <article class="row one-comment">
                     <div class="col-md-2 col-sm-2 hidden-xs">
                       <figure class="thumbnail">
                         <%= image_tag "review/user-avatar-placeholder.png", class: "img-responsive" %>
@@ -67,19 +76,31 @@
                               <%= comment.content %>
                             </p>
                           </div>
-                          <p class="text-right">
-                            <%= link_to "#", class: "btn btn-default btn-sm text-white" do %>
-                              <i class="fa fa-reply text-white"></i>
-                              <%= t ".reply" %>
-                            <% end %>
-                          </p>
                         </div>
                       </div>
                     </div>
-                    <%= will_paginate @comments, :page_links => false %>
+                    <%= render partial: "comments/comment",
+                      collection: comment.sub_comments, as: :comment %>
+                    <div class="subcomment"></div>
+                    <!-- Form reply comment -->
+                    <div class="d-flex flex-row-reverse w-100">
+                      <div class="col-md-10 col-sm-10">
+                        <article class="row one-comment">
+                          <%= bootstrap_form_for [@post, @comment], remote: true do |f| %>
+                            <%= f.text_field :content, hide_label: true, class: "form-control reset-text" %>
+                            <p class="btn btn-default btn-sm text-white text-right">
+                              <i class="fa fa-reply text-white"></i>
+                              <%= f.submit t(".reply"), class: "btn btn-secondary button-custom" %>
+                            </p>
+                          <% end %>
+                        </article>
+                      </div>
+                    </div>
+                    <!-- End form reply comment -->
                   </article>
                 <% end %>
               </section>
+              <%= will_paginate @comments, page_links: false %>
             </div>
           </div>
         </div>

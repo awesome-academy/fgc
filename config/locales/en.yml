@@ -1,5 +1,8 @@
 en:
   layouts:
+    pagetop:
+      home: "Home"
+      create_post: "Create Post"
     header:
       home: "Home"
       games: "Games"
@@ -67,3 +70,9 @@ en:
       sub_topic: "Topic"
       create: "Create Post"
       require_login: "Please login before create post"
+      comment: "Comment"
+      write_a_comments: "Write a new comment"
+  comment:
+    create:
+      comment_error: "Have error, please try again"
+      comment_sucess: "Commented"

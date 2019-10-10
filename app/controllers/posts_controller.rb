@@ -2,14 +2,16 @@ class PostsController < ApplicationController
   before_action :load_post, only: :show
   before_action :load_root_topics, only: :new
   before_action :check_login, only: [:new, :create]
+  before_action :build_comment, only: :show
 
   def index; end
 
   def show
     @comments = @post
                 .comments
+                .root_comments
                 .eager_load(:sub_comments, :user)
-                .order(created_at: :desc)
+                .date_descending
                 .paginate page: params[:page],
                           per_page: Settings.comment.paginate
   end
@@ -53,5 +55,9 @@ class PostsController < ApplicationController
 
   def load_root_topics
     @root_topics = Topic.root_topics.pluck :content, :id
+  end
+
+  def build_comment
+    @comment = @post.comments.build
   end
 end
